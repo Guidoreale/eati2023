@@ -2,7 +2,8 @@
 name: Second
 
 on:
-    push: [workflows2]
+    push: 
+        branches: ["workflows2"]
 
 jobs: 
     job1:
@@ -14,7 +15,7 @@ jobs:
             - run: python eati.py Workflow Dependencies
     job2:
         name: 'segundo job'
-        runs on: windows 2019
+        runs-on: windows-2019
         steps:
             - name: 'primer step job 2'
               run: Get-Command
