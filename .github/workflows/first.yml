@@ -14,9 +14,8 @@ jobs:
          runs-on: windows-latest
          steps:
              - name: 'segundo job'
-               uses: actions/checkout@v3
-             - run: |
-                 python eaty.py "Mi nombre es" "Guido Reale"
-                 python eaty.py "Estoy haciendo un curso" "de Github Actions"
+               run: |
+                  echo "Mi nombre es Guido Reale"
+                  echo "Estoy haciendo un curso de Github Actions"
 
                  
