@@ -8,7 +8,7 @@ jobs:
          steps:
              - name: 'Mi primer step'
                uses: actions/checkout@v3
-             - run: python eaty.py "EATI" "2023"
+             - run: python eati.py "EATI" "2023"
      job2:
          name: Job2
          runs-on: windows-latest
