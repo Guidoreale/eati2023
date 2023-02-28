@@ -5,3 +5,6 @@ def main():
     par2 = sys.argv[2]
 
     print(par1, ' ', par2)
+
+if __name__ == "__main__":
+    main()
