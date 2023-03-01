@@ -15,7 +15,7 @@ jobs:
           ref: main
           path: ./main
       - run: gcc main.c -o main
-      - uses: actions/upload-artifact
+      - uses: actions/upload-artifact@v3
         with:
           name: envoutput
           path: ./main
@@ -23,7 +23,7 @@ jobs:
     name: 'test-download'
     runs-on: windows-latest
     steps:
-      - uses: actions/download-artifact
+      - uses: actions/download-artifact@v3
         with:    
           name: envoutput
       - run: ls
