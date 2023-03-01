@@ -1,0 +1,34 @@
+name: four
+env:
+    WORKFLOW_VARIABLE: 'soy la variable workflow'
+    SCOPE: 'soy la variable scope'
+on:
+    push:
+        branches: ["workflows4"]
+jobs:
+    job1:
+        name: 'primer trabajo'
+        runs-on: windows-latest
+        env:
+            JOB_VARIABLE: 'soy la variable job_variable'
+            SCOPE: 'soy la variable scope redefinida'
+        steps:
+            - name: 'primer step' 
+              env:
+                  STEP_VARIABLE: 'soy la variable step_variable'
+                  SCOPE: 'soy la variable scope redefinida por segunda vez'
+              run: |    
+                  echo ${{ env.WORKFLOW_VARIABLE }}
+                  echo ${{ env.JOB_VARIABLE }}
+                  echo ${{ env.STEP_VARIABLE }}
+                  echo ${{ env.SCOPE }}
+            - name: 'segundo step'
+              run: echo ${{ env.SCOPE }}
+    job2:
+        name: 'segundo job'
+        runs-on: ubuntu-latest
+        steps:
+            - name: 'primer step del segundo job'
+              run: echo ${{ env.SCOPE }}
+
+
