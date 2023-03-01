@@ -1,0 +1,30 @@
+name: six
+on:
+  push:
+    branches: ['workflows6']
+env:
+  DIRECCION_A_COPIAR: 'jmoyano/cautious-meme'
+jobs:
+  build:
+    name: 'build'
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: ${{env.DIRECCION_A_COPIAR}}
+          ref: main
+          path: ./main
+      - run: gcc main.c -o main
+      - uses: actions/upload-artifact
+        with:
+          name: envoutput
+          path: ./main
+  test:
+    name: 'test-download'
+    runs-on: windows-latest
+    steps:
+      - uses: actions/download-artifact
+        with:    
+          name: envoutput
+      - run: ls
+      - run: python verificacion.py  
