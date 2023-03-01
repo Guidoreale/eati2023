@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'primer step'
-        run: echo ${{ secret.VARIABLE_SECRETA }}
+        run: echo ${{ secrets.VARIABLE_SECRETA }}
