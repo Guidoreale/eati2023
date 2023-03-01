@@ -1,0 +1,22 @@
+name: Third
+on: 
+    push:
+        branches: ["workflows3"]
+
+jobs:
+    job1:
+        name: 'job1'
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  repository: jmoyano/eati2023
+                  ref: main
+                  path: ./eati
+            - uses: actions/checkout@v3
+              with:
+                  repository: jmoyano/eati2023
+                  ref: anotherbranch
+                  path: ./anotherbranch
+            - run: cat ./anotherbranch/message.txt
+            - run: cat ./main/message.txt
