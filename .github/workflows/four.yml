@@ -23,7 +23,7 @@ jobs:
                   echo ${{ env.STEP_VARIABLE }}
                   echo ${{ env.SCOPE }}
             - name: 'segundo step'
-              run: echo ${{ env.SCOPE }}
+              run: echo "${{ env.SCOPE }}"
     job2:
         name: 'segundo job'
         runs-on: ubuntu-latest
