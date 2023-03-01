@@ -12,7 +12,7 @@ jobs:
               with:
                   repository: jmoyano/eati2023
                   ref: main
-                  path: ./eati
+                  path: ./main
             - uses: actions/checkout@v3
               with:
                   repository: jmoyano/eati2023
