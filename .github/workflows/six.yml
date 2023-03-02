@@ -25,4 +25,4 @@ jobs:
         with:    
           name: envoutput
       - run: ls
-      - run: python .github/verificacion.py
+      - run: python verificacion.py
