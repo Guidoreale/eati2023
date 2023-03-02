@@ -17,6 +17,7 @@ jobs:
           name: envoutput
           path: ./main
   test:
+    needs: [build]
     name: 'test-download'
     runs-on: ubuntu-latest
     steps:
