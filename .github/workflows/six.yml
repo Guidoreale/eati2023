@@ -11,7 +11,6 @@ jobs:
         with:
           repository: jmoyano/cautious-meme
           ref: main
-          path: ./main
       - run: gcc main.c -o main
       - uses: actions/upload-artifact@v3
         with:
