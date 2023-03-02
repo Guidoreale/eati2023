@@ -25,4 +25,8 @@ jobs:
         with:    
           name: envoutput
       - run: ls
+      - uses: actions/checkout@v3
+        with:
+          repository: jmoyano/cautious-meme
+          ref: main  
       - run: python verificacion.py
