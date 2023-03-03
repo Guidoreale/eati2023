@@ -1,0 +1,10 @@
+name: five
+on: 
+  push:
+jobs:
+  job1:
+    name: 'primer job'
+    runs-on: ubuntu-20.04
+    steps:
+      - name: 'primer step job1'  
+        uses: guidoreale/custom-action
